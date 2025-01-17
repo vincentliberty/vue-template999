@@ -16,7 +16,7 @@ axios.get('/api').then(res => {
 <template>
   <main>
     <!-- <TheWelcome /> -->
-    <div>
+    <div class="test1">
       {{ count }}
     </div>
 
