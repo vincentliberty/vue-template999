@@ -13,6 +13,9 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.46.1",
+    "@tencent/edgeone": "^0.0.1-beta.30",
+    "axios": "^1.7.9",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3"
   },
