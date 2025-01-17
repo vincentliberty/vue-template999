@@ -3,7 +3,7 @@ import TheWelcome from '../components/TheWelcome.vue'
 import axios from 'axios';
 import { ref } from 'vue'
 
-const count = ref(0)
+const count = ref()
 
 axios.get('/api').then(res => {
   console.log('res', res.data.visitCount);
@@ -16,7 +16,11 @@ axios.get('/api').then(res => {
 <template>
   <main>
     <!-- <TheWelcome /> -->
-    {{ count }}
+    <div>
+      {{ count }}
+    </div>
+
+    
   </main>
 </template>
 
