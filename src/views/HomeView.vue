@@ -14,7 +14,7 @@ axios.get('/api').then(res => {
 </script>
 
 <template>
-  <main>
+  <div>
     test
     <!-- <TheWelcome /> -->
     <div class="test1">
@@ -22,7 +22,7 @@ axios.get('/api').then(res => {
     </div>
 
     
-  </main>
+  </div>
 </template>
 
 
