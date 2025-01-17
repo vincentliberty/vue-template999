@@ -6,8 +6,8 @@ import { ref } from 'vue'
 const count = ref(0)
 
 axios.get('/api').then(res => {
-  console.log('res', res.data.content);
-  count.value = res.data.content;
+  console.log('res', res.data.visitCount);
+  count.value = res.data.visitCount;
 });
 
 

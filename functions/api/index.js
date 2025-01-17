@@ -21,17 +21,37 @@ const data = {
   content: 5,
 };
 
-// console.log(test);
+// console.log(test111);
 // console.log('test);
+export async function onRequestGet({ request, params, env }) {
+  // 读取 Key-Value 数据
+  const visitCount = await testkv.get('visitCount');
+  
+  let visitCountInt = Number(visitCount);
+  visitCountInt += 1;
 
+  // 写入 Key-Value 数据
+  await testkv.put('visitCount', String(visitCountInt));
 
-export function onRequestGet(context) {
-  const result = JSON.stringify(data, null, 2);
-  return new Response(result, {
+  const res = JSON.stringify({
+    visitCount: visitCountInt,
+  });
+
+  return new Response(res, {
     headers: {
       'content-type': 'application/json; charset=UTF-8',
+      'Access-Control-Allow-Origin': '*',
     },
   });
 }
+
+// export function onRequestGet(context) {
+//   const result = JSON.stringify(data, null, 2);
+//   return new Response(result, {
+//     headers: {
+//       'content-type': 'application/json; charset=UTF-8',
+//     },
+//   });
+// }
 
 
